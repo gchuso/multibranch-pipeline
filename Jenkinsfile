@@ -10,6 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+<<<<<<< HEAD
                 
                 script {
                         sh """\
@@ -17,6 +18,8 @@ pipeline {
                             """
                     }
                 
+=======
+>>>>>>> branch 'dev' of git@github.com:gchuso/multibranch-pipeline.git
             }
         }
         stage('Deploy') {
