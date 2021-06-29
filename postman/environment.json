@@ -1,0 +1,32 @@
+{
+	"id": "dbe0caea-1bb7-4e7d-893c-b85f5ff59a77",
+	"name": "TEMP - gateway Altitude",
+	"values": [
+		{
+			"key": "protocol",
+			"value": "https",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "host",
+			"value": "10.102.161.192",
+			"enabled": true
+		},
+		{
+			"key": "port",
+			"value": "30015",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "context",
+			"value": "/api",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2019-07-02T11:34:01.762Z",
+	"_postman_exported_using": "Postman/6.7.4"
+}

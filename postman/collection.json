@@ -1,0 +1,1368 @@
+{
+	"info": {
+		"_postman_id": "9998e0ab-5239-4ccf-8eed-3993dc64b799",
+		"name": "[Opportunity] for YIS-NOR v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token Login Yukon",
+			"item": [
+				{
+					"name": "Login with user and passord (get token)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.globals.set(\"jwtToken\",  pm.response.json().tokenId);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Verisure@2020",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "genesys_yukon_int_NL@securitasdirect.es",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{authentication}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/login",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login with user and passord (get token)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{authentication}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/login",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}{{context}}",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=ISO-8859-1",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Aug 2018 09:37:05 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"name": "Expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip",
+									"name": "content-encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "C499E45352423808166BEC7D941AFEB4",
+									"key": "JSESSIONID"
+								}
+							],
+							"body": "{\"tokenId\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbnJpcXVlLnZpbmVAc2VjdXJpdGFzZGlyZWN0LmVzIiwiaXNzIjoidmNwIiwiZXhwIjoxNTM1NTg3MjAwLCJpYXQiOjE1MzU1MzU0MjUsImVtcGxveWVlTnVtYmVyIjoiRVE4NDU2In0.BtULbRYoGxMR59276tU-ZydjuNe1-3fhw5N3uqve5UgmvoL_xwNWmVDnzsELjJq9h6p_e1v7yA7XglVS8UFXGA\"}"
+						},
+						{
+							"name": "Login with user and passord (Bad Credentials)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic {{authentication}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/login",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}{{context}}",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Aug 2018 10:57:36 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Expires",
+									"value": "0",
+									"name": "Expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip",
+									"name": "content-encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked",
+									"name": "transfer-encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "C499E45352423808166BEC7D941AFEB4",
+									"key": "JSESSIONID"
+								}
+							],
+							"body": "{\"timestamp\":1535540256569,\"status\":401,\"error\":\"Unauthorized\",\"message\":\"Authentication Failed: Bad credentials\",\"path\":\"/security/login\"}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "Verisure@2020",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "genesys_yukon_int_NL@securitasdirect.es",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Check Reference Datas",
+			"item": [
+				{
+					"name": "Get ReferenceData by type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"\r",
+									"    pm.response.to.have.status(200);    \r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/referencedata?type=ReferenceData.InteractionInformation.Terminations.Validation.Agent not available",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"referencedata"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "ReferenceData.InteractionInformation.Terminations.Validation.Agent not available"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Opportunity Management",
+			"item": [
+				{
+					"name": "Create Opportunity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"location\": \"NOR\",\r\n\"timeZoneId\": \"Europe/Madrid\",\r\n\"prospectId\":\"a value for a prospect Id in Yukon\",\r\n\"leadId\":\"a value for a lead Id in Yukon\",\r\n\"number\":\"CRM41 Sync number\",\r\n\"ownership\": {\r\n    \"salesChannel\" : \"Field\",\r\n    \"salesSubChannel\" : \"Self Generated\",\r\n    \"costCenter\" : \"costCenter\",\r\n    \"ownerUserId\" : \"ownerUserId\"\r\n},\r\n\"customer\": { \r\n    \"name\": \"Mike&Juan\",\r\n    \"surname\": \"Lars\",\r\n    \"middleName\": \"Test from Juan Postman\",    \r\n    \"gender\": \"M\",\r\n    \"docType\": \"PASSPORT\",\r\n    \"docNumber\": \"123456Y\",\r\n    \"treatment\": \"MR\",\r\n    \"contactData\": [\r\n        {\r\n            \"label\":\"test label\", \r\n            \"value\": \"+4792010124\", \r\n            \"type\": \"PHONE\",\r\n            \"isPrimary\": true\r\n        }\r\n    ],\r\n    \"addresses\" : [ \r\n            {\r\n                \"label\" : \"HOME\",\r\n                \"street\" : \"street\",\r\n                \"streetType\" : \"STREET\",\r\n                \"number\" : \"65656\",\r\n                \"postalCode\" : \"76767\",\r\n                \"location\" : \"NOR\",\r\n                \"countryName\" : \"\",\r\n                \"administrativeArea\" : \"\",\r\n                \"locality\" : \"Oslo\",\r\n                \"subLocality\" : \"\",                \r\n                \"verified\" : false,\r\n                \"extra\" : \"\",\r\n                \"coordinates\" : {\r\n                    \"type\" : \"\",\r\n                    \"coordinates\" : [ \r\n                        1223.12, \r\n                        123.21\r\n                    ]\r\n                }\r\n            }\r\n        ]\r\n},\r\n\"propertyData\": {\r\n    \"type\": \"RESIDENTIAL\",\r\n    \"subtype\": \"FLAT\",\r\n    \"productType\": \"ALARM\",\r\n    \"existingAlarm\": {\r\n        \"currentAlarmSystem\": \"Hardware store – Do It Yourself\",\r\n        \"cancellationPeriod\": \"LessThreeMonths\"\r\n    },\r\n    \"decisionMakerAvailability\": \"NoInformation\",\r\n    \"burgledInformation\": {\r\n        \"burgledDate\":\"2021-03-30T08:16:09.317Z\",\r\n        \"burgled\": false\r\n    },\r\n    \"constructionInformation\": {\r\n        \"underConstruction\": false,\r\n        \"endConstructionDate\": \"2021-03-30T08:16:09.317Z\"\r\n    },\r\n    \"insuranceInformation\": {\r\n        \"insuranceCompany\": \"ROGER\",\r\n        \"insuranceNumber\": \"12345\"\r\n    },\r\n    \"companyData\": {\r\n        \"companyName\": \"ROGER\",\r\n        \"ownerName\": \"12345\",\r\n        \"managerName\": \"12345\",\r\n        \"numEmployees\": \"12345\",\r\n        \"openingHours\": \"12345\",\r\n        \"goodsValue\": \"12345\"\r\n    },\r\n    \"thirdDegree\": false,\r\n    \"areaSQM\": \"0\",\r\n    \"propertyOwnership\": \"Rent\",\r\n    \"bigProperty\": false,\r\n    \"lightConnection\": true,\r\n    \"grilledWindow\": false,\r\n    \"timeInhabited\": \"1000000\"\r\n},\r\n\"leadGenAnalytics\": {\r\n    \"insertionChannel\": \"Funnel\",\r\n    \"webSource\": \"Facebook\",\r\n    \"webCampaign\": \"facebook_generic_nrw_calculator\",\r\n    \"webReferrer\": \"\",\r\n    \"adMedium\": \"\",\r\n    \"adSource\": \"\",\r\n    \"adCampaign\": \"\",\r\n    \"webLeadId\": \"157434931139037\",\r\n    \"webLeadLocation\": \"funnel\",\r\n    \"webLeadURL\": \"https://www.verisure.nl/lp/cc/v=c2VjdGlvbj1lZHMmdGVsZW\",\r\n    \"adClickIdSource\": \"\",\r\n    \"adClickIdValue\": \"\",\r\n    \"webGaClientId\": \"1880344428.1574349177\",\r\n    \"device\": \"mobile\",\r\n    \"externalLeadId\": \"\",\r\n    \"leadGenerationTimeStamp\": \"2020-05-05T12:27:41.191+00:00\",\r\n    \"dialerInformation\": { \r\n        \"dialer\": \"Genesys Cloud\", \r\n        \"acdMarketingDescription\": \"calls from ACD14 - VS_email Desktop\", \r\n        \"profileName\": \"NL_MKT_CC_INB_email_VS\",\r\n        \"callingList\": \"This callis list\"\r\n    } \r\n},\r\n\"referral\": { \r\n    \"type\": \"INSTALLATIONNUMBER\",\r\n    \"referralId\": \"0987654321\"\r\n}\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Opportunity with Appointment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"location\": \"NOR\",\r\n\"timeZoneId\": \"Europe/Madrid\",\r\n\"prospectId\":\"a value for a prospect Id in Yukon\",\r\n\"leadId\":\"a value for a lead Id in Yukon\",\r\n\"number\":\"CRM41 Sync number\",\r\n\"ownership\": {\r\n    \"salesChannel\" : \"Field\",\r\n    \"salesSubChannel\" : \"Self Generated\",\r\n    \"costCenter\" : \"costCenter\",\r\n    \"ownerUserId\" : \"ownerUserId\"\r\n},\r\n\"customer\": { \r\n    \"name\": \"Mike&Juan\",\r\n    \"surname\": \"Lars\",\r\n    \"middleName\": \"Test from Juan Postman\",    \r\n    \"gender\": \"M\",\r\n    \"docType\": \"PASSPORT\",\r\n    \"docNumber\": \"123456Y\",\r\n    \"treatment\": \"MR\",\r\n    \"contactData\": [\r\n        {\r\n            \"label\":\"test label\", \r\n            \"value\": \"+4792010124\", \r\n            \"type\": \"PHONE\",\r\n            \"isPrimary\": true\r\n        }\r\n    ],\r\n    \"addresses\" : [ \r\n            {\r\n                \"label\" : \"HOME\",\r\n                \"street\" : \"street\",\r\n                \"streetType\" : \"STREET\",\r\n                \"number\" : \"65656\",\r\n                \"postalCode\" : \"76767\",\r\n                \"location\" : \"NOR\",\r\n                \"countryName\" : \"\",\r\n                \"administrativeArea\" : \"\",\r\n                \"locality\" : \"\",\r\n                \"subLocality\" : \"\",                \r\n                \"verified\" : false,\r\n                \"extra\" : \"\",\r\n                \"coordinates\" : {\r\n                    \"type\" : \"\",\r\n                    \"coordinates\" : [ \r\n                        1223.12, \r\n                        123.21\r\n                    ]\r\n                }\r\n            }\r\n        ]\r\n},\r\n\"propertyData\": {\r\n    \"type\": \"RESIDENTIAL\",\r\n    \"subtype\": \"FLAT\",\r\n    \"productType\": \"ALARM\",\r\n    \"existingAlarm\": {\r\n        \"currentAlarmSystem\": \"Hardware store – Do It Yourself\",\r\n        \"cancellationPeriod\": \"LessThreeMonths\"\r\n    },\r\n    \"decisionMakerAvailability\": \"NoInformation\",\r\n    \"burgledInformation\": {\r\n        \"burgledDate\":\"2021-03-30T08:16:09.317Z\",\r\n        \"burgled\": false\r\n    },\r\n    \"constructionInformation\": {\r\n        \"underConstruction\": false,\r\n        \"endConstructionDate\": \"2021-03-30T08:16:09.317Z\"\r\n    },\r\n    \"insuranceInformation\": {\r\n        \"insuranceCompany\": \"ROGER\",\r\n        \"insuranceNumber\": \"12345\"\r\n    },\r\n    \"thirdDegree\": false,\r\n    \"areaSQM\": \"0\",\r\n    \"propertyOwnership\": \"Rent\",\r\n    \"bigProperty\": false,\r\n    \"lightConnection\": true,\r\n    \"grilledWindow\": false,\r\n    \"timeInhabited\": \"1000000\"\r\n},\r\n\"leadGenAnalytics\": {\r\n    \"insertionChannel\": \"Funnel\",\r\n    \"webSource\": \"Facebook\",\r\n    \"webCampaign\": \"facebook_generic_nrw_calculator\",\r\n    \"webReferrer\": \"\",\r\n    \"adMedium\": \"\",\r\n    \"adSource\": \"\",\r\n    \"adCampaign\": \"\",\r\n    \"webLeadId\": \"157434931139037\",\r\n    \"webLeadLocation\": \"funnel\",\r\n    \"webLeadURL\": \"https://www.verisure.nl/lp/cc/v=c2VjdGlvbj1lZHMmdGVsZW\",\r\n    \"adClickIdSource\": \"\",\r\n    \"adClickIdValue\": \"\",\r\n    \"webGaClientId\": \"1880344428.1574349177\",\r\n    \"device\": \"mobile\",\r\n    \"externalLeadId\": \"\",\r\n    \"leadGenerationTimeStamp\": \"2020-05-05T12:27:41.191+00:00\",\r\n    \"dialerInformation\": { \r\n        \"dialer\": \"Genesys Cloud\", \r\n        \"acdMarketingDescription\": \"calls from ACD14 - VS_email Desktop\", \r\n        \"profileName\": \"NL_MKT_CC_INB_email_VS\",\r\n        \"callingList\": \"This callis list\"\r\n    } \r\n},\r\n\"referral\": { \r\n    \"type\": \"INSTALLATIONNUMBER\",\r\n    \"referralId\": \"0987654321\"\r\n},\r\n\"appointmentData\": { \r\n    \"scheduledDate\": \"2020-05-05T12:27:41.191+00:00\",\r\n    \"bookerUserId\":\"UserCreatinghere\"\r\n}\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Assigned Opportunity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"location\": \"NOR\",\r\n\"timeZoneId\": \"Europe/Madrid\",\r\n\"prospectId\":\"a value for a prospect Id in Yukon\",\r\n\"leadId\":\"a value for a lead Id in Yukon\",\r\n\"number\":\"CRM41 Sync number\",\r\n\"ownership\": {\r\n    \"salesChannel\" : \"Field\",\r\n    \"salesSubChannel\" : \"Self Generated\",\r\n    \"costCenter\" : \"costCenter\",\r\n    \"ownerUserId\" : \"ownerUserId\"\r\n},\r\n\"customer\": { \r\n    \"name\": \"Mike&Juan\",\r\n    \"surname\": \"Lars\",\r\n    \"middleName\": \"Test from Juan Postman\",    \r\n    \"gender\": \"M\",\r\n    \"docType\": \"PASSPORT\",\r\n    \"docNumber\": \"123456Y\",\r\n    \"treatment\": \"MR\",\r\n    \"contactData\": [\r\n        {\r\n            \"label\":\"test label\", \r\n            \"value\": \"+4792010124\", \r\n            \"type\": \"PHONE\",\r\n            \"isPrimary\": true\r\n        }\r\n    ],\r\n    \"addresses\" : [ \r\n            {\r\n                \"label\" : \"HOME\",\r\n                \"street\" : \"street\",\r\n                \"streetType\" : \"STREET\",\r\n                \"number\" : \"65656\",\r\n                \"postalCode\" : \"76767\",\r\n                \"location\" : \"NOR\",\r\n                \"countryName\" : \"\",\r\n                \"administrativeArea\" : \"\",\r\n                \"locality\" : \"\",\r\n                \"subLocality\" : \"\",                \r\n                \"verified\" : false,\r\n                \"extra\" : \"\",\r\n                \"coordinates\" : {\r\n                    \"type\" : \"\",\r\n                    \"coordinates\" : [ \r\n                        1223.12, \r\n                        123.21\r\n                    ]\r\n                }\r\n            }\r\n        ]\r\n},\r\n\"propertyData\": {\r\n    \"type\": \"RESIDENTIAL\",\r\n    \"subtype\": \"FLAT\",\r\n    \"productType\": \"ALARM\",\r\n    \"existingAlarm\": {\r\n        \"currentAlarmSystem\": \"Hardware store – Do It Yourself\",\r\n        \"cancellationPeriod\": \"LessThreeMonths\"\r\n    },\r\n    \"decisionMakerAvailability\": \"NoInformation\",\r\n    \"burgledInformation\": {\r\n        \"burgledDate\":\"2021-03-30T08:16:09.317Z\",\r\n        \"burgled\": false\r\n    },\r\n    \"constructionInformation\": {\r\n        \"underConstruction\": false,\r\n        \"endConstructionDate\": \"2021-03-30T08:16:09.317Z\"\r\n    },\r\n    \"insuranceInformation\": {\r\n        \"insuranceCompany\": \"ROGER\",\r\n        \"insuranceNumber\": \"12345\"\r\n    },\r\n    \"thirdDegree\": false,\r\n    \"areaSQM\": \"0\",\r\n    \"propertyOwnership\": \"Rent\",\r\n    \"bigProperty\": false,\r\n    \"lightConnection\": true,\r\n    \"grilledWindow\": false,\r\n    \"timeInhabited\": \"1000000\"\r\n},\r\n\"leadGenAnalytics\": {\r\n    \"insertionChannel\": \"Funnel\",\r\n    \"webSource\": \"Facebook\",\r\n    \"webCampaign\": \"facebook_generic_nrw_calculator\",\r\n    \"webReferrer\": \"\",\r\n    \"adMedium\": \"\",\r\n    \"adSource\": \"\",\r\n    \"adCampaign\": \"\",\r\n    \"webLeadId\": \"157434931139037\",\r\n    \"webLeadLocation\": \"funnel\",\r\n    \"webLeadURL\": \"https://www.verisure.nl/lp/cc/v=c2VjdGlvbj1lZHMmdGVsZW\",\r\n    \"adClickIdSource\": \"\",\r\n    \"adClickIdValue\": \"\",\r\n    \"webGaClientId\": \"1880344428.1574349177\",\r\n    \"device\": \"mobile\",\r\n    \"externalLeadId\": \"\",\r\n    \"leadGenerationTimeStamp\": \"2020-05-05T12:27:41.191+00:00\",\r\n    \"dialerInformation\": { \r\n        \"dialer\": \"Genesys Cloud\", \r\n        \"acdMarketingDescription\": \"calls from ACD14 - VS_email Desktop\", \r\n        \"profileName\": \"NL_MKT_CC_INB_email_VS\",\r\n        \"callingList\": \"This callis list\"\r\n    } \r\n},\r\n\"referral\": { \r\n    \"type\": \"INSTALLATIONNUMBER\",\r\n    \"referralId\": \"0987654321\"\r\n},\r\n\"appointmentData\": { \r\n    \"scheduledDate\": \"2020-05-05T12:27:41.191+00:00\",\r\n    \"bookerUserId\":\"UserCreatinghere\",\r\n    \"allocatorUserId\":\"User assigning\",\r\n    \"assignedUserId\":\"SE assigned\"\r\n}\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Opportunity change companyName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"    \r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"op\": \"replace\",\r\n    \"path\": \"/propertyData/companyData/companyName\",\r\n    \"value\": \"Yogle\"\r\n  }\r\n]"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Opportunity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n  \"customer\": {\r\n    \"name\": \"Filemon\",\r\n    \"surname\": \"Lopez\",\r\n    \"middleName\": \"Crush\",    \r\n    \"gender\": \"M\",\r\n    \"docType\": \"PASSPORT\",\r\n    \"docNumber\": \"000123Y\",\r\n    \"treatment\": \"MR\",\r\n    \"contactData\": [\r\n      {\r\n        \"label\": \"Filemon\",\r\n        \"value\": \"699019733\",\r\n        \"type\": \"PHONE\"\r\n      }\r\n    ],\r\n    \"addresses\" : [ \r\n            {\r\n                \"label\" : \"HOME\",\r\n                \"street\" : \"street\",\r\n                \"streetType\" : \"WEG\",\r\n                \"number\" : \"65656\",\r\n                \"postalCode\" : \"76767\",\r\n                \"location\" : \"NLD\",\r\n                \"countryName\" : \"\",\r\n                \"administrativeArea\" : \"\",\r\n                \"locality\" : \"\",\r\n                \"subLocality\" : \"\",                \r\n                \"verified\" : false,\r\n                \"extra\" : \"\",\r\n                \"coordinates\" : {\r\n                    \"type\" : \"\",\r\n                    \"coordinates\" : [ \r\n                        1223.12, \r\n                        123.21\r\n                    ]\r\n                }\r\n            }\r\n        ]\r\n  },\r\n  \"propertyData\": {\r\n      \"type\": \"RESIDENTIAL\",\r\n      \"subtype\": \"FLAT\",\r\n      \"productType\": \"ALARM\",\r\n      \"existingAlarm\": {\r\n          \"currentAlarmSystem\": \"Hardware store – Do It Yourself\",\r\n          \"cancellationPeriod\": \"LESSTHREEMONTHS\"\r\n      },\r\n      \"decisionMakerAvailability\": \"NOINFORMATION\",\r\n      \"addresses\": [\r\n          {\r\n              \"streetType\": \"WEG\"\r\n          }\r\n      ],\r\n    \"companyData\": {\r\n      \"companyName\": \"companyName2\",\r\n      \"ownerName\": \"ownerName2\",\r\n      \"managerName\": \"managerName2\",\r\n      \"numEmployees\": \"333\",\r\n      \"openingHours\": \"6\",\r\n      \"goodsValue\": \"654321\"\r\n    }\r\n  },\r\n  \"leadGenAnalytics\": {\r\n    \"marketingChannel\": \"Radio\",\r\n    \"marketingCampaign\": \"Tele Sales Campaign\",\r\n    \"marketingReferrer\": \"FireFox\",\r\n    \"utmMedium\": \"utmMedium\",\r\n    \"utmSource\": \"utmSource\",\r\n    \"utmCampaign\": \"Sales campaign\",\r\n    \"funnelLeadId\": \"987654\",\r\n    \"funnelLocation\": \"funnel\",\r\n    \"funnelURL\": \"https://www.securitasdirect.fr/connector/integration/funnel/funnel_content_2019.php?t=843545-dhghjkg-fghfghfg-124856&i=idLead&s=2158\",\r\n    \"clickIdSource\": \"whtlkid\",\r\n    \"clickId\": \"012333\",\r\n    \"gaClientId\": \"110047552.1614611234\",\r\n    \"device\": \"iPhone\",\r\n    \"affiliateId\": \"002\",\r\n    \"leadGenerationTimeStamp\": \"2021-03-17T10:10:25.230Z\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Opportunity by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"\r",
+									"    pm.response.to.have.status(200);    \r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Opportunities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"\r",
+									"    pm.response.to.have.status(200);    \r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/search?filter=CRM",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "CRM"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Schedule",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"scheduledDate\": \"2021-06-16T09:30:00.245Z\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}/schedule",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}",
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"assignedUserId\":\"genyukintnl\",\r\n\"allocatorUserId\":\"CCAgent\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}/assign",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckIn",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}/checkIn",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}",
+								"checkIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sales Feedback",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"feedbackType\": \"Sold\",\r\n\"feedbackReason\": \"Some reasons why it was sold\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}/salesFeedback",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}",
+								"salesFeedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Install Opportunity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"installationDate\": \"2021-06-30T08:16:09.317Z\",\r\n\"installerUserId\": \"QM3423PR\",\r\n\"installationNumber\": \"23423423\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}/install",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}",
+								"install"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close Opportunity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"\r",
+									"    pm.globals.set(\"opportunityId\", pm.response.json().id);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"closingType\": \"Sale not possible\",\r\n\"closingReason\": \"Out of area\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/opportunities/{{opportunityId}}/close",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"opportunities",
+								"{{opportunityId}}",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"department\": \"Marketing-ContactCenter\",\r\n    \"agent\": \"msvsnltest@verisure.com\",\r\n    \"timeZone\": \"Europe/Amsterdam\",\r\n    \"application\": \"HybridDesktop\",\r\n    \"parentType\": \"Opportunities\",\r\n    \"parentId\": \"40116a71-6ab9-4e1e-96fc-3dfd9861412a\",\r\n    \"comment\": \"Comment test\",\r\n    \"location\": \"NO\"\r\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/comments/",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"\r",
+									"    pm.response.to.have.status(200);    \r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "AuthenticatedUser",
+								"type": "text",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}{{context}}/comments?parentId=40116a71-6ab9-4e1e-96fc-3dfd9861412a&parentType=Opportunities",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{context}}",
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "parentId",
+									"value": "40116a71-6ab9-4e1e-96fc-3dfd9861412a"
+								},
+								{
+									"key": "parentType",
+									"value": "Opportunities"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

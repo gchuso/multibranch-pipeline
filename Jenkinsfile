@@ -1,3 +1,7 @@
+
+testProjectJSON = 'postman/collection.json'
+testEnvironmentJSON = 'postman/environment.json'
+
 pipeline {
     agent any
 
@@ -10,16 +14,13 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-<<<<<<< HEAD
                 
                 script {
                         sh """\
-                            newman run ${testProjectJSON} -e ${testEnvironmentJSON}
+                            newman run ${testProjectJSON} -e ${testEnvironmentJSON} --insecure
                             """
                     }
                 
-=======
->>>>>>> branch 'dev' of git@github.com:gchuso/multibranch-pipeline.git
             }
         }
         stage('Deploy') {
